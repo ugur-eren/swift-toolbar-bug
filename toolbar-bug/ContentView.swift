@@ -9,8 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            VStack {
+                TextField("Press here", text: .constant(""))
+                    .padding(.horizontal, 12)
+                
+                NavigationLink("Go to next screen", destination: ToolbarView())
+            }
+        }
     }
 }
 
