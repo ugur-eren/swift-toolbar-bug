@@ -14,7 +14,18 @@ struct ContentView: View {
                 TextField("Press here", text: .constant(""))
                     .padding(.horizontal, 12)
                 
-                NavigationLink("Go to next screen", destination: ToolbarView())
+                NavigationLink("Go to next screen") {
+                    List {
+                        Text("Hello, World!")
+                        Text("Hello, World!")
+                    }
+                        // HERE: Toolbar crashes the app
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                EditButton()
+                            }
+                        }
+                }
             }
         }
     }
